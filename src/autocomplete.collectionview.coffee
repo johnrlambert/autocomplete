@@ -1,5 +1,7 @@
+_ = require('underscore')
+Marionette = require('backbone.marionette')
 
-  class AutoComplete.CollectionView extends Marionette.CollectionView
+class AutoComplete.CollectionView extends Marionette.CollectionView
 
     ###*
      * @type {String}
@@ -18,9 +20,11 @@
       style: 'width: 100%;'
 
     ###*
-     * @return {Marionette.ItemView}
+     * @return {Marionette.View}
     ###
     emptyView:
-      Marionette.ItemView.extend
+      Marionette.View.extend
         tagName: 'li',
         template: _.template "<a>No suggestions available</a>"
+
+module.exports = AutocompleteCollectionView

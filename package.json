@@ -2,7 +2,7 @@
   "name": "marionette-autocomplete",
   "version": "0.3.1",
   "description": "Marionette autocomplete behavior",
-  "main": "dist/autocomplete.js",
+  "main": "src/autocomplete.behavior.coffee",
   "repository": {
     "type": "git",
     "url": "git://github.com/legalweb/autocomplete.git"
@@ -27,7 +27,7 @@
     "grunt-contrib-coffee": "latest",
     "grunt-contrib-uglify": "latest"
   },
-  "dependencies": {
-    "backbone.marionette": "~2.4.5"
+  "peerDependencies": {
+    "backbone.marionette": "~3.0.0"
   }
 }

@@ -1,5 +1,7 @@
+Backbone = require('backbone')
+_ = require('underscore')
 
-  class AutoComplete.Collection extends Backbone.Collection
+class AutoComplete.Collection extends Backbone.Collection
 
     ###*
      * Setup remote collection.
@@ -194,3 +196,5 @@
     reset: ->
       @index = -1
       super arguments...
+
+module.exports = AutoCompleteCollection

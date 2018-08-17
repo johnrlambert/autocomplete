@@ -1,5 +1,10 @@
+Marionette = require('backbone.marionette')
+AutoCompleteChildView = require('./autocomplete.childview.coffee')
+AutoCompleteCollection = require('./autocomplete.collection.coffee')
+AutoCompleteCollectionView = require('./autcomplete.collectionview.coffee')
+_ =require('underscore')
 
-  class AutoComplete.Behavior extends Marionette.Behavior
+class AutoComplete extends Marionette.Behavior
 
     ###*
      * @type {Object}
@@ -9,7 +14,7 @@
       minLength: 0
 
       collection:
-        class: AutoComplete.Collection
+        class: AutoCompleteCollection
         options:
           type: 'remote'
           remote: null
@@ -24,10 +29,10 @@
             limit: 10
 
       collectionView:
-        class: AutoComplete.CollectionView
+        class: AutoCompleteCollectionView
 
       childView:
-        class: AutoComplete.ChildView
+        class: AutoCompleteChildView
 
     ###*
      * This is the event prefix that will be used to fire all events on.
@@ -224,4 +229,4 @@
     onDestroy: ->
       @collectionView.destroy()
 
-  AutoComplete
+module.exports = AutoComplete

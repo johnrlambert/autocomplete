@@ -1,11 +1,13 @@
+Marionette = require('backbone.marionette')
+_ = require('underscore')
 
-  class AutoComplete.ChildView extends Marionette.ItemView
+class AutoCompleteChildView extends Marionette.View
 
     ###*
      * @type {String}
     ###
     tagName: 'li'
-    
+
     ###*
      * @type {String}
     ###
@@ -50,3 +52,5 @@
       e.stopPropagation()
 
       @model.trigger 'selected', @model
+
+module.exports = AutoCompleteChildView
